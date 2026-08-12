@@ -1,4 +1,8 @@
 # cookie-parse-lite
+
+```sh
+npm install @ferrow/cookie-parse-lite
+```
 ![CI](https://github.com/FerrowAI/cookie-parse-lite/actions/workflows/ci.yml/badge.svg)
 
 HTTP cookie parsing and serialization with Set-Cookie attribute support and SameSite validation.

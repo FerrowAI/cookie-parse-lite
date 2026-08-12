@@ -1,5 +1,5 @@
 {
-  "name": "cookie-parse-lite",
+  "name": "@ferrow/cookie-parse-lite",
   "version": "1.0.0",
   "description": "HTTP cookie parsing and serialization with attribute validation and Set-Cookie parsing",
   "main": "dist/index.js",

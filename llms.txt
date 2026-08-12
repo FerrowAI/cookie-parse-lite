@@ -25,7 +25,7 @@ function parseSetCookie(header: string): { name, value, attributes }
 ## Install
 
 ```bash
-npm install cookie-parse-lite
+npm install @ferrow/cookie-parse-lite
 ```
 
 ## Use
