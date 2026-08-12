@@ -1,0 +1,51 @@
+# cookie-parse-lite
+
+> HTTP cookie parsing and serialization with Set-Cookie attribute support and SameSite validation.
+
+Provides RFC 6265 cookie handling: parse request Cookie headers to Map<string, value>, serialize Set-Cookie responses with attributes (maxAge, expires, domain, path, secure, httpOnly, sameSite), and parseSetCookie for parsing Set-Cookie response headers back to structured objects. Case-insensitive attribute parsing. Enforces SameSite=None requires Secure at serialize time.
+
+## API
+
+```typescript
+interface CookieAttributes {
+  maxAge?: number
+  expires?: Date
+  domain?: string
+  path?: string
+  secure?: boolean
+  httpOnly?: boolean
+  sameSite?: "Strict" | "Lax" | "None"
+}
+
+function parse(cookieHeader: string): Map<string, string>
+function serialize(name: string, value: string, attributes?: CookieAttributes): string
+function parseSetCookie(header: string): { name, value, attributes }
+```
+
+## Install
+
+```bash
+npm install cookie-parse-lite
+```
+
+## Use
+
+```typescript
+import { parse, serialize, parseSetCookie } from "cookie-parse-lite";
+
+const cookies = parse("sessionId=abc123; theme=dark");
+
+const setCookie = serialize("token", "xyz", {
+  httpOnly: true,
+  secure: true,
+  sameSite: "Strict",
+});
+```
+
+## Limits
+
+- No cookie domain/path matching logic (application responsibility)
+- Date parsing via Date constructor (no custom format support)
+- SameSite=None+Secure enforcement at serialize time only
+
+Part of the Ferrow open-source toolkit: https://github.com/Ruzylo-cloud/ferrow-toolkit — sponsored by https://ferrow.ai

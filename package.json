@@ -1,0 +1,33 @@
+{
+  "name": "cookie-parse-lite",
+  "version": "1.0.0",
+  "description": "HTTP cookie parsing and serialization with attribute validation and Set-Cookie parsing",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "type-check": "tsc --noEmit -p tsconfig.json"
+  },
+  "keywords": [
+    "cookie",
+    "http",
+    "parsing",
+    "set-cookie",
+    "samesite",
+    "secure"
+  ],
+  "author": "Ruzylo-cloud",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
